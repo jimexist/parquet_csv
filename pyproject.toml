@@ -4,6 +4,14 @@ version = "0.0.1"
 description = "Parquet from and to CSV format converter"
 authors = ["Jiayu Liu <jiayu@hey.com>"]
 license = "MIT"
+readme = "README.md"
+homepage = "https://github.com/Jimexist/parquet_csv"
+repository = "https://github.com/Jimexist/parquet_csv"
+keywords = ["parquet", "csv", "convert", "pyarrow", "arrow"]
+classifiers = ["Topic :: Software Development :: Libraries :: Python Modules"]
+
+[tool.poetry.scripts]
+parquet_to_csv = "parquet_csv.parquet_to_csv:main"
 
 [tool.poetry.dependencies]
 python = "^3.8"
@@ -11,7 +19,19 @@ pyarrow = "^4.0.1"
 click = "^8.0.1"
 
 [tool.poetry.dev-dependencies]
+isort = "^5.9.1"
+mypy = "^0.910"
+black = "^21.6b0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+force_single_line = true
+atomic = true
+include_trailing_comma = true
+
+[tool.black]
+line-length = 88
