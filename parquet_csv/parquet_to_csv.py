@@ -10,7 +10,7 @@ from pyarrow import parquet as pq
 @click.argument("input_file", type=click.Path(exists=True, dir_okay=False))
 @click.argument("output_path", type=click.Path(exists=False, dir_okay=False))
 @click.option("--verbose", default=True)
-def main(input_file, output_path, verbose):
+def parquet_to_csv(input_file, output_path, verbose):
     read_start = perf_counter()
     table = pq.read_table(input_file)
     if verbose:
@@ -21,9 +21,9 @@ def main(input_file, output_path, verbose):
     csv.write_csv(table, output_path)
     if verbose:
         click.echo(
-            f"writing to {click.format_filename(output_path)} took {perf_counter() - read_start:.3f} seconds"
+            f"writing to {click.format_filename(output_path)} took {perf_counter() - write_start:.3f} seconds"
         )
 
 
 if __name__ == "__main__":
-    main()
+    parquet_to_csv()

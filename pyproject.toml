@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "parquet_csv"
-version = "0.0.1"
+version = "0.0.2"
 description = "Parquet from and to CSV format converter"
 authors = ["Jiayu Liu <jiayu@hey.com>"]
 license = "MIT"
@@ -11,7 +11,7 @@ keywords = ["parquet", "csv", "convert", "pyarrow", "arrow"]
 classifiers = ["Topic :: Software Development :: Libraries :: Python Modules"]
 
 [tool.poetry.scripts]
-parquet_to_csv = "parquet_csv.parquet_to_csv:main"
+parquet_to_csv = "parquet_csv.parquet_to_csv:parquet_to_csv"
 
 [tool.poetry.dependencies]
 python = "^3.8"
