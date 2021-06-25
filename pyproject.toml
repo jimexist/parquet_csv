@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "parquet_csv"
+version = "0.0.1"
+description = "Parquet from and to CSV format converter"
+authors = ["Jiayu Liu <jiayu@hey.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyarrow = "^4.0.1"
+click = "^8.0.1"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
